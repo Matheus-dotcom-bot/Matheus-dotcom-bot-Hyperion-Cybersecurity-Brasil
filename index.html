@@ -3,137 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body { background-color: #050505; color: #fff; font-family: 'JetBrains Mono', monospace; margin: 0; padding: 40px; }
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
-
-    :root {
-        --h-cyan: #00f2ff;
-        --h-green: #00ff00;
-        --h-dark: #050505;
-    }
-
-    /* Título e Header */
-    .hp-header { font-family: 'JetBrains Mono', monospace; margin-bottom: 50px; }
-    .hp-title { color: #fff; font-size: clamp(1.8rem, 5vw, 2.8rem); text-transform: uppercase; margin: 0; letter-spacing: -1px; }
-    .hp-title span { color: var(--h-cyan); text-shadow: 0 0 15px rgba(0, 242, 255, 0.6); }
-    .hp-status { color: var(--h-green); font-size: 11px; margin-top: 10px; letter-spacing: 2px; opacity: 0.8; }
-    .hp-blink { animation: hp-b 1s step-end infinite; }
-    @keyframes hp-b { 50% { opacity: 0; } }
-
-    /* Botão Repositório Estilo Terminal */
-    .hp-repo-link {
-        display: inline-block;
-        padding: 15px 25px;
-        color: var(--h-green);
-        text-decoration: none;
-        border: 1px solid var(--h-green);
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 13px;
-        font-weight: bold;
-        transition: 0.3s;
-        background: transparent;
-    }
-    .hp-repo-link:hover {
-        background: var(--h-green);
-        color: #000;
-        box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
-    }
-
-    /* WhatsApp Flutuante Cyber */
-    .hp-wa-float {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        z-index: 999999;
-        display: flex;
-        align-items: center;
-        background: rgba(0,0,0,0.9);
-        border: 1px solid var(--h-cyan);
-        padding: 10px 15px;
-        text-decoration: none;
-        transition: 0.3s;
-        backdrop-filter: blur(5px);
-    }
-    .hp-wa-float:hover {
-        background: var(--h-cyan);
-        box-shadow: 0 0 25px var(--h-cyan);
-        transform: translateY(-5px);
-    }
-    .hp-wa-float:hover * { color: #000 !important; filter: brightness(0); }
-</style>
-
-<header class="hp-header">
-    <h1 class="hp-title">HYPERION <span>CYBERSECURITY</span></h1>
-    <div class="hp-status"><span class="hp-blink">_</span> STATUS: ENCRYPTED_CONNECTION_ACTIVE</div>
-</header>
-
-<div style="margin: 40px 0;">
-    <a href="https://github.com/Matheus-dotcom-bot/PROJECT-NEURO-K" target="_blank" class="hp-repo-link">
-        [ VER_CÓDIGO_FONTE_REPOSITÓRIO ]
-    </a>
-</div>
-
-<a href="https://wa.me/5551992115015" target="_blank" rel="noopener" class="hp-wa-float">
-    <span style="width: 8px; height: 8px; background: var(--h-green); border-radius: 50%; margin-right: 12px; box-shadow: 0 0 8px var(--h-green);"></span>
-    <span style="color: var(--h-cyan); font-size: 11px; font-weight: bold; font-family: 'JetBrains Mono', monospace;">./ESTABELECER_CONTATO</span>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" style="width: 18px; margin-left: 10px; filter: brightness(0) invert(1);">
-</a>
+    <title>Hyperion Cybersecurity | Brasil</title>
     
-        
-        
-        /* HEADER */
-        .header-hyperion { margin-bottom: 50px; }
-        .title { font-size: 2.5rem; text-transform: uppercase; margin: 0; letter-spacing: -1px; }
-        .title span { color: #00f2ff; text-shadow: 0 0 15px rgba(0, 242, 255, 0.5); }
-        .status { color: #00ff00; font-size: 12px; margin-top: 10px; letter-spacing: 2px; }
-        .blink { animation: b 1s step-end infinite; }
-        @keyframes b { 50% { opacity: 0; } }
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Variáveis de Identidade */
+        :root {
+            --h-cyan: #00f2ff;
+            --h-green: #00ff00;
+            --h-dark: #050505;
+            --h-gray: #1a1a1a;
+        }
+
+        /* Configuração Base */
+        body { 
+            background-color: var(--h-dark); 
+            color: #fff; 
+            font-family: 'JetBrains Mono', monospace; 
+            margin: 0; 
+            padding: 40px; 
+            line-height: 1.6;
+        }
+
+        /* HEADER & TÍTULO */
+        .header-hyperion { margin-bottom: 60px; }
+        .title { 
+            font-size: clamp(1.8rem, 5vw, 2.8rem); 
+            text-transform: uppercase; 
+            margin: 0; 
+            letter-spacing: -1px; 
+        }
+        .title span { 
+            color: var(--h-cyan); 
+            text-shadow: 0 0 15px rgba(0, 242, 255, 0.5); 
+        }
+        .status-line { 
+            color: var(--h-green); 
+            font-size: 12px; 
+            margin-top: 10px; 
+            letter-spacing: 2px; 
+        }
+        .blink { animation: h-blink 1s step-end infinite; }
+        @keyframes h-blink { 50% { opacity: 0; } }
 
         /* BOTÃO REPOSITÓRIO (ESTILO TERMINAL) */
         .repo-btn {
             display: inline-block;
-            padding: 15px 25px;
-            color: #00ff00;
+            padding: 15px 30px;
+            color: var(--h-green);
             text-decoration: none;
-            border: 1px solid #00ff00;
+            border: 1px solid var(--h-green);
             font-size: 13px;
-            transition: 0.3s;
+            font-weight: bold;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             background: transparent;
-            margin-top: 20px;
+            margin: 20px 0;
+            letter-spacing: 1px;
         }
-        .repo-btn:hover { background: #00ff00; color: #000; box-shadow: 0 0 20px rgba(0, 255, 0, 0.4); }
+        .repo-btn:hover { 
+            background: var(--h-green); 
+            color: #000; 
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.4); 
+        }
 
-        /* WHATSAPP FLUTUANTE (MINIMALISTA) */
+        /* WHATSAPP FLUTUANTE MODERNISTA */
         .wa-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
+            z-index: 9999;
             display: flex;
             align-items: center;
-            background: rgba(0,0,0,0.9);
-            border: 1px solid #00f2ff;
-            padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid var(--h-cyan);
+            padding: 12px 18px;
             text-decoration: none;
-            z-index: 9999;
-            transition: 0.3s;
+            transition: 0.3s ease;
+            backdrop-filter: blur(5px);
         }
-        .wa-float:hover { transform: translateY(-5px); box-shadow: 0 0 20px #00f2ff; }
-        .wa-dot { width: 8px; height: 8px; background: #00ff00; border-radius: 50%; margin-right: 10px; box-shadow: 0 0 8px #00ff00; }
-        .wa-text { color: #00f2ff; font-size: 11px; font-weight: bold; margin-right: 10px; }
-        .wa-icon { width: 18px; filter: brightness(0) invert(1); }
+        .wa-float:hover { 
+            background: var(--h-cyan); 
+            transform: translateY(-5px); 
+            box-shadow: 0 0 25px var(--h-cyan); 
+        }
+        .wa-dot { 
+            width: 8px; 
+            height: 8px; 
+            background: var(--h-green); 
+            border-radius: 50%; 
+            margin-right: 12px; 
+            box-shadow: 0 0 8px var(--h-green); 
+        }
+        .wa-text { 
+            color: var(--h-cyan); 
+            font-size: 11px; 
+            font-weight: bold; 
+            margin-right: 12px; 
+        }
+        .wa-icon { 
+            width: 18px; 
+            filter: brightness(0) invert(1); 
+        }
+
+        /* Hover Invertido para o WhatsApp */
+        .wa-float:hover .wa-text, 
+        .wa-float:hover .wa-icon { 
+            color: #000 !important; 
+            filter: brightness(0); 
+        }
 
         /* FOOTER */
-        .footer { margin-top: 100px; opacity: 0.5; font-size: 12px; border-top: 1px solid #222; padding-top: 20px; }
+        .footer { 
+            margin-top: 80px; 
+            opacity: 0.5; 
+            font-size: 11px; 
+            border-top: 1px solid var(--h-gray); 
+            padding-top: 30px; 
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
     <header class="header-hyperion">
         <h1 class="title">HYPERION <span>CYBERSECURITY</span></h1>
-        <div class="status"><span class="blink">_</span> STATUS: ENCRYPTED_CONNECTION_ACTIVE</div>
+        <div class="status-line">
+            <span class="blink">_</span> STATUS: ENCRYPTED_CONNECTION_ACTIVE
+        </div>
     </header>
 
     <main>
@@ -144,15 +141,14 @@
 
     <a href="https://wa.me/5551992115015" target="_blank" class="wa-float">
         <div class="wa-dot"></div>
-        <span class="wa-text">./CONTATO_DIRETO</span>
+        <span class="wa-text">./ESTABELECER_CONTATO</span>
         <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" class="wa-icon" alt="WA">
     </a>
 
     <footer class="footer">
         <p>&copy; 2025 Hyperion Cybersecurity Brasil. Brand Registration in Progress (INPI/BR)</p>
-        <p>Developed by Matheus Boeira Pedroso</p>
+        <p>Developed by Matheus Boeira Pedroso with Hyperion Systems</p>
     </footer>
 
 </body>
 </html>
-
