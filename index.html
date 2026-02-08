@@ -286,86 +286,16 @@
         </div>
     </div>
 
-   <style>
-  #wa-hyperion-fixed {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 9999;
-    text-decoration: none;
-    font-family: 'Courier New', Courier, monospace;
-  }
-
-  .wa-card {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 20px;
-    background: rgba(0, 0, 0, 0.9);
-    border: 1px solid #00f2ff; /* Ciano do seu título */
-    box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
-    transition: all 0.3s ease;
-  }
-
-  .wa-card:hover {
-    background: #00f2ff;
-    box-shadow: 0 0 25px rgba(0, 242, 255, 0.4);
-    transform: translateY(-2px);
-  }
-
-  .wa-indicator {
-    width: 8px;
-    height: 8px;
-    background-color: #00ff00; /* Verde neon do bloco inferior */
-    border-radius: 50%;
-    box-shadow: 0 0 8px #00ff00;
-    animation: pulse 1.5s infinite;
-  }
-
-  .wa-label {
-    color: #00f2ff;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-  }
-
-  .wa-card:hover .wa-label {
-    color: #000;
-  }
-
-  .wa-card img {
-    width: 20px;
-    height: 20px;
-    /* Inverte a cor para branco para não quebrar o layout dark */
-    filter: brightness(0) invert(1);
-    opacity: 0.8;
-  }
-
-  .wa-card:hover img {
-    filter: brightness(0);
-    opacity: 1;
-  }
-
-  @keyframes pulse {
-    0% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(1.2); }
-    100% { opacity: 1; transform: scale(1); }
-  }
-
-  /* Ajuste para Mobile */
-  @media (max-width: 600px) {
-    .wa-label { display: none; }
-    .wa-card { padding: 15px; border-radius: 5px; }
-  }
-</style>
-
-<a href="https://wa.me/5551992115015" target="_blank" id="wa-hyperion-fixed">
-  <div class="wa-card">
-    <div class="wa-indicator"></div>
-    <span class="wa-label">./CONTATO_DIRETO</span>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WA">
-  </div>
+<a href="https://wa.me/5551992115015" target="_blank" rel="noopener noreferrer" 
+   style="position: fixed; bottom: 30px; right: 30px; z-index: 999999; text-decoration: none; display: flex; align-items: center; background-color: rgba(0, 0, 0, 0.9); border: 1px solid #00f2ff; padding: 10px 15px; box-shadow: 0 0 20px rgba(0, 242, 255, 0.2); transition: 0.3s; font-family: 'Courier New', Courier, monospace;">
+  
+  <span style="width: 8px; height: 8px; background-color: #00ff00; border-radius: 50%; margin-right: 12px; box-shadow: 0 0 10px #00ff00; display: inline-block;"></span>
+  
+  <span style="color: #00f2ff; font-size: 11px; font-weight: bold; letter-spacing: 2px; margin-right: 15px;">./LINK_DIRETO</span>
+  
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" 
+       alt="WA" 
+       style="width: 18px; height: 18px; filter: brightness(0) invert(1); opacity: 0.9;">
 </a>
         
     
