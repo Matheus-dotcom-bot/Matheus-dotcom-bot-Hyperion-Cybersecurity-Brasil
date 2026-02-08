@@ -1,105 +1,81 @@
-              <style>
-    /* Estilos de Tipografia e Título */
-    .hyperion-wrapper {
-        font-family: 'JetBrains Mono', monospace;
-        background-color: #000;
-        color: #fff;
-        padding: 20px 0;
-    }
-    .hyperion-title {
-        font-size: clamp(1.8rem, 5vw, 3rem);
-        margin: 0;
-        text-transform: uppercase;
-        letter-spacing: -1px;
-    }
-    .hyperion-title .accent {
-        color: #00f2ff;
-        text-shadow: 0 0 15px rgba(0, 242, 255, 0.6);
-    }
-    .status-line {
-        color: #00ff00;
-        font-size: 12px;
-        margin-top: 8px;
-        letter-spacing: 2px;
-    }
-    .blink {
-        animation: h-blink 1s step-end infinite;
-    }
-    @keyframes h-blink { 
-        from, to { opacity: 1; } 50% { opacity: 0; } 
-    }
-
-    /* Estilo do Botão WhatsApp (Flutuante e Modernista) */
-    .wa-fixed-link {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        z-index: 999999;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        background: rgba(0, 0, 0, 0.9);
-        border: 1px solid #00f2ff;
-        padding: 10px 18px;
-        transition: 0.3s ease-in-out;
-        box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
-    }
-    .wa-fixed-link:hover {
-        background: #00f2ff;
-        box-shadow: 0 0 25px rgba(0, 242, 255, 0.5);
-        transform: translateY(-3px);
-    }
-    .wa-fixed-link:hover span, .wa-fixed-link:hover img {
-        color: #000 !important;
-        filter: brightness(0);
-    }
-</style>
-
-<div class="hyperion-wrapper">
-    <h1 class="hyperion-title">HYPERION <span class="accent">CYBERSECURITY</span></h1>
-    <div class="status-line">
-        <span class="blink">_</span> STATUS: ENCRYPTED_CONNECTION_ACTIVE
-    </div>
-</div>
-
-<a href="https://wa.me/5551992115015" target="_blank" rel="noopener noreferrer" class="wa-fixed-link">
-    <span style="width: 8px; height: 8px; background: #00ff00; border-radius: 50%; margin-right: 12px; box-shadow: 0 0 8px #00ff00;"></span>
-    <span style="color: #00f2ff; font-size: 11px; font-weight: bold; letter-spacing: 1px; margin-right: 12px; font-family: monospace;">./LINK_DIRETO</span>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WA" style="width: 18px; filter: brightness(0) invert(1);">
-</a>
-
-            ">
-                [ VER_CÓDIGO_FONTE_REPOSITÓRIO ]
-            </a>
-        </div>
-    </div>
-
-<a href="https://wa.me/5551992115015" target="_blank" rel="noopener noreferrer" 
-   style="position: fixed; bottom: 30px; right: 30px; z-index: 999999; text-decoration: none; display: flex; align-items: center; background-color: rgba(0, 0, 0, 0.9); border: 1px solid #00f2ff; padding: 10px 15px; box-shadow: 0 0 20px rgba(0, 242, 255, 0.2); transition: 0.3s; font-family: 'Courier New', Courier, monospace;">
-  
-  <span style="width: 8px; height: 8px; background-color: #00ff00; border-radius: 50%; margin-right: 12px; box-shadow: 0 0 10px #00ff00; display: inline-block;"></span>
-  
-  <span style="color: #00f2ff; font-size: 11px; font-weight: bold; letter-spacing: 2px; margin-right: 15px;">./LINK_DIRETO</span>
-  
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" 
-       alt="WA" 
-       style="width: 18px; height: 18px; filter: brightness(0) invert(1); opacity: 0.9;">
-</a>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #050505; color: #fff; font-family: 'JetBrains Mono', monospace; margin: 0; padding: 40px; }
         
-    
+        /* HEADER */
+        .header-hyperion { margin-bottom: 50px; }
+        .title { font-size: 2.5rem; text-transform: uppercase; margin: 0; letter-spacing: -1px; }
+        .title span { color: #00f2ff; text-shadow: 0 0 15px rgba(0, 242, 255, 0.5); }
+        .status { color: #00ff00; font-size: 12px; margin-top: 10px; letter-spacing: 2px; }
+        .blink { animation: b 1s step-end infinite; }
+        @keyframes b { 50% { opacity: 0; } }
+
+        /* BOTÃO REPOSITÓRIO (ESTILO TERMINAL) */
+        .repo-btn {
+            display: inline-block;
+            padding: 15px 25px;
+            color: #00ff00;
+            text-decoration: none;
+            border: 1px solid #00ff00;
+            font-size: 13px;
+            transition: 0.3s;
+            background: transparent;
+            margin-top: 20px;
+        }
+        .repo-btn:hover { background: #00ff00; color: #000; box-shadow: 0 0 20px rgba(0, 255, 0, 0.4); }
+
+        /* WHATSAPP FLUTUANTE (MINIMALISTA) */
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            align-items: center;
+            background: rgba(0,0,0,0.9);
+            border: 1px solid #00f2ff;
+            padding: 10px 15px;
+            text-decoration: none;
+            z-index: 9999;
+            transition: 0.3s;
+        }
+        .wa-float:hover { transform: translateY(-5px); box-shadow: 0 0 20px #00f2ff; }
+        .wa-dot { width: 8px; height: 8px; background: #00ff00; border-radius: 50%; margin-right: 10px; box-shadow: 0 0 8px #00ff00; }
+        .wa-text { color: #00f2ff; font-size: 11px; font-weight: bold; margin-right: 10px; }
+        .wa-icon { width: 18px; filter: brightness(0) invert(1); }
+
+        /* FOOTER */
+        .footer { margin-top: 100px; opacity: 0.5; font-size: 12px; border-top: 1px solid #222; padding-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <header class="header-hyperion">
+        <h1 class="title">HYPERION <span>CYBERSECURITY</span></h1>
+        <div class="status"><span class="blink">_</span> STATUS: ENCRYPTED_CONNECTION_ACTIVE</div>
+    </header>
+
+    <main>
+        <a href="https://github.com/Matheus-dotcom-bot/PROJECT-NEURO-K" target="_blank" class="repo-btn">
+            [ VER_CÓDIGO_FONTE_REPOSITÓRIO ]
+        </a>
+    </main>
+
+    <a href="https://wa.me/5551992115015" target="_blank" class="wa-float">
+        <div class="wa-dot"></div>
+        <span class="wa-text">./CONTATO_DIRETO</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" class="wa-icon" alt="WA">
+    </a>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Hyperion Cybersecurity Brasil. Todos os direitos reservados.</p>
-            <div class="uk-badge">
-
-                
-                Brand Registration in Progress (INPI/BR)
-            </div>
-            <br><br>
-            <p style="font-size: 0.8rem; opacity: 0.5;">Developed by Matheus Boeira Pedroso</p>
-        </div>
+        <p>&copy; 2025 Hyperion Cybersecurity Brasil. Brand Registration in Progress (INPI/BR)</p>
+        <p>Developed by Matheus Boeira Pedroso</p>
     </footer>
 
 </body>
 </html>
+
