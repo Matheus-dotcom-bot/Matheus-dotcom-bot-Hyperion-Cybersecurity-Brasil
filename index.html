@@ -4,70 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyperion Cybersecurity | Brasil</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-
     <style>
-        /* Variáveis de Identidade */
         :root {
-            --h-cyan: #00f2ff;
-            --h-green: #00ff00;
-            --h-dark: #050505;
-            --h-gray: #1a1a1a;
+            --cyan: #00f2ff;
+            --green: #00ff00;
+            --dark: #050505;
+            --card-bg: rgba(255, 255, 255, 0.03);
         }
 
-        /* Configuração Base */
-        body { 
-            background-color: var(--h-dark); 
-            color: #fff; 
-            font-family: 'JetBrains Mono', monospace; 
-            margin: 0; 
-            padding: 40px; 
+        body {
+            background-color: var(--dark);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            margin: 0;
+            padding: 40px;
             line-height: 1.6;
         }
 
-        /* HEADER & TÍTULO */
-        .header-hyperion { margin-bottom: 60px; }
-        .title { 
-            font-size: clamp(1.8rem, 5vw, 2.8rem); 
-            text-transform: uppercase; 
-            margin: 0; 
-            letter-spacing: -1px; 
-        }
-        .title span { 
-            color: var(--h-cyan); 
-            text-shadow: 0 0 15px rgba(0, 242, 255, 0.5); 
-        }
-        .status-line { 
-            color: var(--h-green); 
-            font-size: 12px; 
-            margin-top: 10px; 
-            letter-spacing: 2px; 
-        }
-        .blink { animation: h-blink 1s step-end infinite; }
-        @keyframes h-blink { 50% { opacity: 0; } }
+        /* --- HEADER --- */
+        .header-section { margin-bottom: 60px; }
+        .title { font-size: clamp(1.8rem, 5vw, 2.8rem); text-transform: uppercase; margin: 0; letter-spacing: -1px; }
+        .title span { color: var(--cyan); text-shadow: 0 0 15px rgba(0, 242, 255, 0.5); }
+        .status { color: var(--green); font-size: 12px; margin-top: 10px; letter-spacing: 2px; }
+        .blink { animation: b 1s step-end infinite; }
+        @keyframes b { 50% { opacity: 0; } }
 
-        /* BOTÃO REPOSITÓRIO (ESTILO TERMINAL) */
+        /* --- SECTION LABEL --- */
+        .section-label { color: var(--cyan); display: block; margin: 40px 0 20px; font-size: 14px; }
+
+        /* --- GRID DE CARDS --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); padding: 25px; transition: 0.3s; }
+        .card:hover { border-color: var(--cyan); transform: translateY(-5px); background: rgba(0, 242, 255, 0.02); }
+        .card h3 { font-size: 1rem; margin: 0 0 15px; text-transform: uppercase; }
+        .card h3 span { color: var(--cyan); margin-right: 8px; }
+        .card p { color: #888; font-size: 0.85rem; margin: 0; }
+
+        /* --- BLOCO NEURO-K (VERDE) --- */
+        .research-box {
+            border: 1px solid var(--green);
+            padding: 30px;
+            margin: 60px 0;
+            position: relative;
+            background: rgba(0, 255, 0, 0.02);
+        }
+        .research-box h2 { color: var(--green); font-size: 1.2rem; margin: 0 0 20px; text-transform: uppercase; }
+        .research-text { color: #aaa; font-size: 0.9rem; margin-bottom: 25px; }
+
         .repo-btn {
             display: inline-block;
-            padding: 15px 30px;
-            color: var(--h-green);
+            padding: 12px 25px;
+            color: var(--green);
             text-decoration: none;
-            border: 1px solid var(--h-green);
+            border: 1px solid var(--green);
             font-size: 13px;
             font-weight: bold;
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            background: transparent;
-            margin: 20px 0;
-            letter-spacing: 1px;
+            transition: 0.3s;
         }
-        .repo-btn:hover { 
-            background: var(--h-green); 
-            color: #000; 
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.4); 
-        }
+        .repo-btn:hover { background: var(--green); color: #000; box-shadow: 0 0 20px rgba(0, 255, 0, 0.4); }
 
-        /* WHATSAPP FLUTUANTE MODERNISTA */
+        /* --- WHATSAPP FIXO --- */
         .wa-float {
             position: fixed;
             bottom: 30px;
@@ -76,79 +73,65 @@
             display: flex;
             align-items: center;
             background: rgba(0, 0, 0, 0.9);
-            border: 1px solid var(--h-cyan);
+            border: 1px solid var(--cyan);
             padding: 12px 18px;
             text-decoration: none;
-            transition: 0.3s ease;
-            backdrop-filter: blur(5px);
+            transition: 0.3s;
         }
-        .wa-float:hover { 
-            background: var(--h-cyan); 
-            transform: translateY(-5px); 
-            box-shadow: 0 0 25px var(--h-cyan); 
-        }
-        .wa-dot { 
-            width: 8px; 
-            height: 8px; 
-            background: var(--h-green); 
-            border-radius: 50%; 
-            margin-right: 12px; 
-            box-shadow: 0 0 8px var(--h-green); 
-        }
-        .wa-text { 
-            color: var(--h-cyan); 
-            font-size: 11px; 
-            font-weight: bold; 
-            margin-right: 12px; 
-        }
-        .wa-icon { 
-            width: 18px; 
-            filter: brightness(0) invert(1); 
-        }
+        .wa-float:hover { background: var(--cyan); transform: translateY(-5px); box-shadow: 0 0 25px var(--cyan); }
+        .wa-float:hover * { color: #000 !important; filter: brightness(0); }
+        .wa-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; margin-right: 12px; box-shadow: 0 0 8px var(--green); }
+        .wa-text { color: var(--cyan); font-size: 11px; font-weight: bold; margin-right: 12px; }
 
-        /* Hover Invertido para o WhatsApp */
-        .wa-float:hover .wa-text, 
-        .wa-float:hover .wa-icon { 
-            color: #000 !important; 
-            filter: brightness(0); 
-        }
-
-        /* FOOTER */
-        .footer { 
-            margin-top: 80px; 
-            opacity: 0.5; 
-            font-size: 11px; 
-            border-top: 1px solid var(--h-gray); 
-            padding-top: 30px; 
-            text-align: center;
-        }
+        /* --- FOOTER --- */
+        .footer { margin-top: 80px; opacity: 0.4; font-size: 11px; text-align: center; border-top: 1px solid #1a1a1a; padding-top: 40px; }
     </style>
 </head>
 <body>
 
-    <header class="header-hyperion">
+    <header class="header-section">
         <h1 class="title">HYPERION <span>CYBERSECURITY</span></h1>
-        <div class="status-line">
-            <span class="blink">_</span> STATUS: ENCRYPTED_CONNECTION_ACTIVE
-        </div>
+        <div class="status"><span class="blink">_</span> STATUS: ENCRYPTED_CONNECTION_ACTIVE</div>
     </header>
 
-    <main>
+    <span class="section-label">> ./SYSTEM_CAPABILITIES</span>
+
+    <div class="grid">
+        <div class="card">
+            <h3><span>01.</span> S-SDLC Strategy</h3>
+            <p>Consultoria especializada para integrar segurança no ciclo de vida de desenvolvimento de software. Código seguro desde a primeira linha.</p>
+        </div>
+        <div class="card">
+            <h3><span>02.</span> Gestão de Vulnerabilidades</h3>
+            <p>Mapeamento de riscos, análise de falhas em infraestrutura e relatórios técnicos para mitigação proativa de ameaças.</p>
+        </div>
+        <div class="card">
+            <h3><span>03.</span> Conformidade & LGPD</h3>
+            <p>Adaptação técnica de sistemas para atender aos requisitos da Lei Geral de Proteção de Dados e padrões internacionais.</p>
+        </div>
+    </div>
+
+    <div class="research-box">
+        <h2>> ./PROJECT_NEURO-K_RESEARCH</h2>
+        <p class="research-text">
+            Pesquisa avançada em engenharia de software focada em HPC para hardware de baixa especificação. 
+            Utiliza extensões nativas em C para gestão de memória a nível de Kernel.
+        </p>
         <a href="https://github.com/Matheus-dotcom-bot/PROJECT-NEURO-K" target="_blank" class="repo-btn">
             [ VER_CÓDIGO_FONTE_REPOSITÓRIO ]
         </a>
-    </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Hyperion Cybersecurity Brasil. Brand Registration in Progress (INPI/BR)</p>
+        <p>Developed by Matheus Boeira Pedroso</p>
+    </footer>
 
     <a href="https://wa.me/5551992115015" target="_blank" class="wa-float">
         <div class="wa-dot"></div>
         <span class="wa-text">./ESTABELECER_CONTATO</span>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" class="wa-icon" alt="WA">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" style="width: 18px; filter: brightness(0) invert(1);" alt="WA">
     </a>
-
-    <footer class="footer">
-        <p>&copy; 2025 Hyperion Cybersecurity Brasil. Brand Registration in Progress (INPI/BR)</p>
-        <p>Developed by Matheus Boeira Pedroso with Hyperion Systems</p>
-    </footer>
 
 </body>
 </html>
