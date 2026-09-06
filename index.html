@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hyperion Cybersecurity Brasil — segurança no desenvolvimento, gestão de vulnerabilidades e conformidade com a LGPD.">
     <title>Hyperion Cybersecurity | Brasil</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -13,6 +14,8 @@
             --card-bg: rgba(255, 255, 255, 0.03);
         }
 
+        * { box-sizing: border-box; }
+
         body {
             background-color: var(--dark);
             color: #fff;
@@ -22,7 +25,6 @@
             line-height: 1.6;
         }
 
-        /* --- HEADER --- */
         .header-section { margin-bottom: 60px; }
         .title { font-size: clamp(1.8rem, 5vw, 2.8rem); text-transform: uppercase; margin: 0; letter-spacing: -1px; }
         .title span { color: var(--cyan); text-shadow: 0 0 15px rgba(0, 242, 255, 0.5); }
@@ -30,10 +32,8 @@
         .blink { animation: b 1s step-end infinite; }
         @keyframes b { 50% { opacity: 0; } }
 
-        /* --- SECTION LABEL --- */
         .section-label { color: var(--cyan); display: block; margin: 40px 0 20px; font-size: 14px; }
 
-        /* --- GRID DE CARDS --- */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); padding: 25px; transition: 0.3s; }
         .card:hover { border-color: var(--cyan); transform: translateY(-5px); background: rgba(0, 242, 255, 0.02); }
@@ -41,7 +41,6 @@
         .card h3 span { color: var(--cyan); margin-right: 8px; }
         .card p { color: #888; font-size: 0.85rem; margin: 0; }
 
-        /* --- BLOCO NEURO-K (VERDE) --- */
         .research-box {
             border: 1px solid var(--green);
             padding: 30px;
@@ -51,7 +50,9 @@
         }
         .research-box h2 { color: var(--green); font-size: 1.2rem; margin: 0 0 20px; text-transform: uppercase; }
         .research-text { color: #aaa; font-size: 0.9rem; margin-bottom: 25px; }
+        .research-note { color: #777; font-size: 0.75rem; margin: -10px 0 25px; }
 
+        .actions { display: flex; flex-wrap: wrap; gap: 12px; }
         .repo-btn {
             display: inline-block;
             padding: 12px 25px;
@@ -63,8 +64,12 @@
             transition: 0.3s;
         }
         .repo-btn:hover { background: var(--green); color: #000; box-shadow: 0 0 20px rgba(0, 255, 0, 0.4); }
+        .dashboard-btn {
+            color: var(--cyan);
+            border-color: var(--cyan);
+        }
+        .dashboard-btn:hover { background: var(--cyan); color: #000; box-shadow: 0 0 20px rgba(0, 242, 255, 0.4); }
 
-        /* --- WHATSAPP FIXO --- */
         .wa-float {
             position: fixed;
             bottom: 30px;
@@ -83,8 +88,17 @@
         .wa-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; margin-right: 12px; box-shadow: 0 0 8px var(--green); }
         .wa-text { color: var(--cyan); font-size: 11px; font-weight: bold; margin-right: 12px; }
 
-        /* --- FOOTER --- */
         .footer { margin-top: 80px; opacity: 0.4; font-size: 11px; text-align: center; border-top: 1px solid #1a1a1a; padding-top: 40px; }
+
+        @media (max-width: 600px) {
+            body { padding: 24px 18px 100px; }
+            .header-section { margin-bottom: 40px; }
+            .research-box { padding: 22px; margin: 45px 0; }
+            .actions { flex-direction: column; }
+            .repo-btn { text-align: center; }
+            .wa-float { right: 18px; bottom: 18px; }
+            .wa-text { display: none; }
+        }
     </style>
 </head>
 <body>
@@ -99,7 +113,7 @@
     <div class="grid">
         <div class="card">
             <h3><span>01.</span> S-SDLC Strategy</h3>
-            <p>Consultoria especializada para integrar segurança no ciclo de vida de desenvolvimento de software. Código seguro desde a primeira linha.</p>
+            <p>Consultoria especializada para integrar segurança ao ciclo de vida de desenvolvimento de software. Código seguro desde a primeira linha.</p>
         </div>
         <div class="card">
             <h3><span>02.</span> Gestão de Vulnerabilidades</h3>
@@ -114,16 +128,23 @@
     <div class="research-box">
         <h2>> ./PROJECT_NEURO-K_RESEARCH</h2>
         <p class="research-text">
-            Pesquisa avançada em engenharia de software focada em HPC para hardware de baixa especificação. 
-            Utiliza extensões nativas em C para gestão de memória a nível de Kernel.
+            Pesquisa em engenharia de sistemas e adaptive computational offloading, com foco em execução computacional eficiente e avaliação de estratégias para ambientes com recursos limitados.
         </p>
-        <a href="https://github.com/Matheus-dotcom-bot/PROJECT-NEURO-K" target="_blank" rel="noopener noreferrer" class="repo-btn" aria-label="Abrir o repositório PROJECT-NEURO-K no GitHub">
-            [ VER_CÓDIGO_FONTE_REPOSITÓRIO ]
-        </a>
+        <p class="research-note">
+            Projeto de pesquisa independente. Resultados apresentados no dashboard são simulações e não representam medições físicas.
+        </p>
+        <div class="actions">
+            <a href="https://github.com/Matheus-dotcom-bot/PROJECT-NEURO-K" target="_blank" rel="noopener noreferrer" class="repo-btn" aria-label="Abrir o repositório PROJECT-NEURO-K no GitHub">
+                [ VER_CÓDIGO_FONTE_REPOSITÓRIO ]
+            </a>
+            <a href="https://project-neuro-k.vercel.app/dashboard.html" target="_blank" rel="noopener noreferrer" class="repo-btn dashboard-btn" aria-label="Abrir o dashboard do PROJECT-NEURO-K">
+                [ ABRIR_DASHBOARD_RESEARCH ]
+            </a>
+        </div>
     </div>
 
     <footer class="footer">
-        <p>&copy; 2025 Hyperion Cybersecurity Brasil. Brand Registration in Progress (INPI/BR)</p>
+        <p>&copy; 2026 Hyperion Cybersecurity Brasil. Brand Registration in Progress (INPI/BR)</p>
         <p>Developed by Matheus Boeira Pedroso</p>
     </footer>
 
